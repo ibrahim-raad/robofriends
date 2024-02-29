@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux'; 
 import { legacy_createStore as createStore, applyMiddleware, combineReducers } from 'redux';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import { thunk }  from 'redux-thunk';
 import './index.css'; 
 import reportWebVitals from './reportWebVitals';
@@ -11,10 +11,10 @@ import 'tachyons';
 import App from './Containers/App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-const logger = createLogger();
+// const logger = createLogger();
 
 const rootReducer = combineReducers({ searchRobots, requestRobots})
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 if ('serviceWorker' in navigator) {
   // Register a service worker hosted at the root of the
